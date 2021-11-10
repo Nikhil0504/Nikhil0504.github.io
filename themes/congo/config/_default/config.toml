@@ -2,12 +2,11 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://jpanther.github.io/congo/docs/getting-started/
 
-theme = "congo"
 # baseURL = "https://your_domain.com/"
 languageCode = "en"
 defaultContentLanguage = "en"
 
-title = "Nikhil Garuda"
+title = "Congo"
 # copyright = "Copy, _right?_ :thinking_face:"
 
 enableEmoji = true
@@ -16,11 +15,11 @@ enableRobotsTXT = true
 summaryLength = 0
 
 [author]
-name = "Nikhil Garuda"
-image = "profile.jpeg"
-bio = "I like space 🔭 and coding 👨‍💻!"
-links = [
-  { email = "mailto:nikhilgaruda@live.com.com" },
+  # name = "Your name here"
+  # image = "img/author.jpg"
+  # bio = "A little bit about you"
+  # links = [
+  #   { email = "mailto:hello@your_domain.com" },
   #   { link = "https://link-to-some-website.com/" },
   #   { codepen = "https://codepen.io/username" },
   #   { dev = "https://dev.to/username" },
@@ -28,7 +27,7 @@ links = [
   #   { dribbble = "https://dribbble.com/username" },
   #   { facebook = "https://facebook.com/username" },
   #   { foursquare = "https://foursquare.com/username" },
-  { github = "https://github.com/Nikhil0504" },
+  #   { github = "https://github.com/username" },
   #   { gitlab = "https://gitlab.com/username" },
   #   { instagram = "https://instagram.com/username" },
   #   { keybase = "https://keybase.io/username" },
@@ -46,4 +45,4 @@ links = [
   #   { twitch = "https://twitch.tv/username" },
   #   { twitter = "https://twitter.com/username" },
   #   { youtube = "https://youtube.com/username" },
-]
+  # ]
