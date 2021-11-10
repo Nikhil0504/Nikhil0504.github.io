@@ -1,0 +1,226 @@
+<!doctype html><html lang=en><head>
+<meta charset=utf-8>
+<meta http-equiv=content-language content="en">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta http-equiv=x-ua-compatible content="ie=edge">
+<title>Big O Notation &#183; Nikhil Garuda</title>
+<meta name=title content="Big O Notation &#183; Nikhil Garuda">
+<meta name=description content="Explanation of the Big O Notation">
+<link rel=canonical href=/posts/bigo/>
+<link type=text/css rel=stylesheet href=/css/schemes/congo.min.b48d6ba061dc77186a2524fb8aac5ac3823b2679a9299ca60325abbccc9c1764c884715f0ba24b4e2776cb3814df4af1f4c854b87207cd5d4c7a254da9b55751.css integrity="sha512-tI1roGHcdxhqJST7iqxaw4I7JnmpKZymAyWrvMycF2TIhHFfC6JLTid2yzgU30rx9MhUuHIHzV1MeiVNqbVXUQ==">
+<link type=text/css rel=stylesheet href=/css/compiled/main.min.aca2297023c90faf162c0dcb8c066ab0b686298ed41f1e1349a00a96a70076d08c5f2b1efe10c6132c4e35e7857d2ff71f3e08da2b9121fa9cf6c2a2f0941d93.css integrity="sha512-rKIpcCPJD68WLA3LjAZqsLaGKY7UHx4TSaAKlqcAdtCMXyse/hDGEyxONeeFfS/3Hz4I2iuRIfqc9sKi8JQdkw==">
+<script>function loadPreferredAppearance(){localStorage.preferredAppearance==="dark"||!("preferredAppearance"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")}function setPreferredAppearance(a){a=="default"?localStorage.removeItem("preferredAppearance"):localStorage.preferredAppearance=a,loadPreferredAppearance()}loadPreferredAppearance(),window.matchMedia("(prefers-color-scheme: dark)").addListener(loadPreferredAppearance)</script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<meta property="og:title" content="Big O Notation">
+<meta property="og:description" content="Explanation of the Big O Notation">
+<meta property="og:type" content="article">
+<meta property="og:url" content="/posts/bigo/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-11-10T11:40:11+05:30">
+<meta property="article:modified_time" content="2021-11-10T11:40:11+05:30">
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Big O Notation">
+<meta name=twitter:description content="Explanation of the Big O Notation">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","articleSection":"Posts","name":"Big O Notation","headline":"Big O Notation","description":"Explanation of the Big O Notation","inLanguage":"en","author":{"@type":"Person","name":"Nikhil Garuda"},"creator":{"@type":"Person","name":"Nikhil Garuda"},"copyrightHolder":"Nikhil Garuda","copyrightYear":"2021","dateCreated":"2021-11-10T11:40:11\u002b05:30","datePublished":"2021-11-10T11:40:11\u002b05:30","dateModified":"2021-11-10T11:40:11\u002b05:30","url":"\/posts\/bigo\/","wordCount":"820","keywords":[]}</script>
+<meta name=generator content="Hugo 0.89.2">
+<meta name=author content="Nikhil Garuda">
+<link href=mailto:nikhilgaruda@live.com.com rel=me>
+<link href=https://github.com/Nikhil0504 rel=me>
+<link type=text/css rel=stylesheet href=/lib/katex/katex.min.bc9ab1919f92ba07ffe96465a5cc4dd35a957d7ff6f6117aa9cdf7787175bdadcd82857e53ec028beb9302c435d2c0e81b20711cb75a1ef1b00e5577c9561ba0.css integrity="sha512-vJqxkZ+Sugf/6WRlpcxN01qVfX/29hF6qc33eHF1va3NgoV+U+wCi+uTAsQ10sDoGyBxHLdaHvGwDlV3yVYboA==">
+<script defer src=/lib/katex/katex.min.e6e7cd707a8e6208a51841cf7ee44843907fbc34b533cf940be0c4499e42c158064e0f9bd8e97fd79ad82ff1a209627f4b1f28568d053c5a24d5d3e4f14f4835.js integrity="sha512-5ufNcHqOYgilGEHPfuRIQ5B/vDS1M8+UC+DESZ5CwVgGTg+b2Ol/15rYL/GiCWJ/Sx8oVo0FPFok1dPk8U9INQ=="></script>
+<script defer src=/lib/katex/auto-render.min.640fd13eb028f3c0e5c119e7a0d56a28836740d716111cd12b4dcf0da038188262559bc61485906dd582b1479b3197e45a88677e782c0e35f353a3e890ee231b.js integrity="sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==" onload=renderMathInElement(document.body)></script>
+</head>
+<body class="flex flex-col h-screen px-6 m-auto text-lg leading-7 bg-neutral text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-neutral max-w-7xl"><header class="flex justify-between py-6 font-semibold sm:items-center sm:py-10 text-neutral-800 dark:text-neutral">
+<div>
+<a class="hover:underline hover:underline-primary-500 hover:underline-thickness-bold hover:underline-offset-small" rel=me href=/>Nikhil Garuda</a>
+</div>
+<nav>
+<ul class="flex flex-col list-none sm:flex-row">
+<li class="mb-1 text-right sm:mb-0 sm:mr-7 sm:last:mr-0">
+<a class="hover:underline hover:underline-primary-500 hover:underline-thickness-bold hover:underline-offset-small" href=/posts/ title=Posts>Blog</a>
+</li>
+<li class="mb-1 text-right sm:mb-0 sm:mr-7 sm:last:mr-0">
+<a class="hover:underline hover:underline-primary-500 hover:underline-thickness-bold hover:underline-offset-small" href=/tags/ title=Tags>Tags</a>
+</li>
+</ul>
+</nav>
+</header>
+<main class=flex-grow>
+<article class=max-w-prose>
+<header>
+<h1 class="mt-0 text-4xl font-extrabold text-neutral-800 dark:text-neutral">
+Big O Notation
+</h1>
+<div class="mt-8 mb-12 text-base text-neutral-400 dark:text-neutral-500">
+<div class="flex flex-row items-center">
+<time datetime="2021-11-10 11:40:11 +0530 +0530">10 November 2021</time><span class="px-2 text-primary-500">&#183;</span><span title="Reading time">4 mins</span>
+</div>
+</div>
+</header>
+<section class="prose dark:prose-light">
+<p class="!mb-9 text-xl text-neutral-400 dark:text-neutral-500">
+This post is based on one of my school presentations I did this year.
+</p>
+<h1 id=introduction>Introduction <a class=heading-anchor href=#introduction aria-label=Anchor>#</a></h1>
+<p>Alogrithms is essential for performing calculations, data processing or any other tasks for that matter. As an
+effective method, an algorithm can be expressed within a finite amount of space and time, and in a well-defined
+formal language for calulating a function.</p>
+<p>Big O Notation is a way measure an algorithm&rsquo;s efficiency. It is used to depict an algorithm&rsquo;s growth rate that determines
+its performance when the input size grows.</p>
+<div class="flex px-4 py-3 rounded-md bg-primary-100 dark:bg-primary-900">
+<span class="pr-3 text-primary-400">
+<span class="relative inline-block align-text-bottom icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exclamation-triangle" class="svg-inline--fa fa-exclamation-triangle fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentcolor" d="M569.517 440.013C587.975 472.007 564.806 512 527.94 512H48.054c-36.937.0-59.999-40.055-41.577-71.987L246.423 23.985c18.467-32.009 64.72-31.951 83.154.0l239.94 416.028zM288 354c-25.405.0-46 20.595-46 46s20.595 46 46 46 46-20.595 46-46-20.595-46-46-46zm-43.673-165.346 7.418 136c.347 6.364 5.609 11.346 11.982 11.346h48.546c6.373.0 11.635-4.982 11.982-11.346l7.418-136c.375-6.874-5.098-12.654-11.982-12.654h-63.383c-6.884.0-12.356 5.78-11.981 12.654z"/></svg>
+</span>
+</span>
+<span class="no-prose dark:text-neutral-300"><strong>Note</strong>: I could bore you with all mathematics and formal definitions but since I am too lazy to write and there are
+better people than me who can explain those better you can just
+see this <a href=https://en.wikipedia.org/wiki/Big_O_notation#Formal_definition>link</a></span>
+</div>
+<hr>
+<h1 id=comparison>Comparison <a class=heading-anchor href=#comparison aria-label=Anchor>#</a></h1>
+<p>Big O Notation is representated as \(O()\) which essentially means it will take some value for some particular amount of steps.</p>
+<p>Let&rsquo;s say for instance we have two algorithms with complexities \(O(n^2)\) and \(O(2^n)\)
+We will get the following table:</p>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>Size N</th>
+<th>10</th>
+<th>20</th>
+<th>40</th>
+<th>100</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>\(N^2\)</td>
+<td>100</td>
+<td>400</td>
+<td>1600</td>
+<td>10000</td>
+</tr>
+<tr>
+<td style=text-align:center>\(2^N\)</td>
+<td>1024</td>
+<td>1048576</td>
+<td>\(10^{12}\)</td>
+<td>\(1.26 × 10^{30}\)</td>
+</tr>
+</tbody>
+</table>
+<p>Performance of algorithm is <em>inversely proportional</em> to the wall clock time it records for a given input size.</p>
+<p>We usually consider the term that will affect the algorithm the <strong>most</strong>. For example if we have an algorithm depending on
+the value of \(n\) with a performance of \(ax^2 + bx + c \) we would just the sqaured term as that would be affected
+the most. So we can simply say that this algorithm has a performance of \(O(N^2)\)</p>
+<hr>
+<h1 id=examples>Examples <a class=heading-anchor href=#examples aria-label=Anchor>#</a></h1>
+<h2 id=linear-search>Linear Search <a class=heading-anchor href=#linear-search aria-label=Anchor>#</a></h2>
+<p>Let&rsquo;s say we want to search for a number from 1 to 10</p>
+<p>Our first strategy is to start with the first number of the array and move up by one until we find our target number.
+Our algorithm steps would look something like this.</p>
+<ol>
+<li>Start at the beginning</li>
+<li>Compare the value with the target</li>
+<li>Move to the next value</li>
+<li>Reach end of the list</li>
+</ol>
+<p>In round 1, we choose number one; that’s not correct, so we move to round 2 and eliminate number one as an option.
+Step 2 is also not correct, and we continue all the way until we select number ten.</p>
+<p>In the worst-case senario, this is not very efficient. We would have to thorugh the entire list one-by-one to get
+our answer. The Big O notation for Linear Search is \(O(N)\). The complexity is directly related to the size of
+the inputs — the algorithm takes an additional step for each additional data element.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>linear_search</span><span class=p>(</span><span class=n>array</span><span class=p>,</span> <span class=n>x</span><span class=p>):</span>
+    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>array</span><span class=p>)):</span>
+        <span class=k>if</span> <span class=n>array</span><span class=p>[</span><span class=n>i</span><span class=p>]</span> <span class=o>==</span> <span class=n>x</span><span class=p>:</span>
+            <span class=k>return</span> <span class=n>i</span>
+    <span class=k>return</span> <span class=s2>&#34;Not found in array&#34;</span></code></pre></div>
+<p><strong>Time Complexity:</strong> <kbd>\(O(N)\)</kbd></p>
+<p><strong>Space Complexity:</strong> <kbd>\(O(1)\)</kbd></p>
+<h2 id=binary-search>Binary Search <a class=heading-anchor href=#binary-search aria-label=Anchor>#</a></h2>
+<p>Let&rsquo;s try out a different strategy. The most critcal part over here would be to keep the list in order.</p>
+<p>Now instead of starting from first, we start from the middle of the list. We check to see whether we have chosen
+the target number. If not, we check whether the number is smaller or larger than our choice. In either case,
+we eliminate half of the list that doesn’t include our target. Then we select a number in the middle of the remaining values.</p>
+<p>Our algorithm steps would look something like this.</p>
+<ol>
+<li>Find the midpoint of the list</li>
+<li>Compare the midpoint with the target</li>
+<li>If our value and the target match we stop — we’ve found our target</li>
+<li>If our value is smaller than the target, we make a new list ranging from the midpoint plus one to the largest value.</li>
+<li>If our value is larger than the target, we make a new list ranging from the smallest value to the midpoint minus one.</li>
+<li>Repeat until we find the target or reach that last element, and it does not match the target.</li>
+</ol>
+<p>This is efficient because it eliminates half of the list in each pass. Amazingly, if we were to pick a number between
+one and a million, the worst case would be 20 guesses.</p>
+<p>In general, the worst-case scenario of a Binary Search is \(log(n + 1)\). The Big O notation for Binary Search is
+\(O(log N)\). In contrast to \(O(N)\) which takes an additional step for each data element, \(O(log N)\) means that the
+algorithm takes an additional step each time the data doubles.</p>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=k>def</span> <span class=nf>binary_search</span><span class=p>(</span><span class=n>array</span><span class=p>,</span> <span class=n>x</span><span class=p>):</span>
+    <span class=n>left</span> <span class=o>=</span> <span class=mi>0</span>
+    <span class=n>right</span> <span class=o>=</span> <span class=nb>len</span><span class=p>(</span><span class=n>arr</span><span class=p>)</span> <span class=o>-</span> <span class=mi>1</span>
+
+    <span class=k>while</span> <span class=n>left</span> <span class=o>&lt;=</span> <span class=n>right</span><span class=p>:</span>
+        <span class=n>mid_point</span> <span class=o>=</span> <span class=p>(</span><span class=n>left</span> <span class=o>+</span> <span class=n>right</span><span class=p>)</span> <span class=o>//</span> <span class=mi>2</span>
+
+        <span class=k>if</span> <span class=n>target</span> <span class=o>&lt;</span> <span class=n>arr</span><span class=p>[</span><span class=n>mid_point</span><span class=p>]:</span>
+            <span class=n>right</span> <span class=o>=</span> <span class=n>mid_point</span> <span class=o>-</span> <span class=mi>1</span>
+        <span class=k>elif</span> <span class=n>target</span> <span class=o>&gt;</span> <span class=n>arr</span><span class=p>[</span><span class=n>mid_point</span><span class=p>]:</span>
+            <span class=n>left</span> <span class=o>=</span> <span class=n>mid_point</span> <span class=o>+</span> <span class=mi>1</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=k>return</span> <span class=n>mid_point</span>
+    <span class=k>return</span> <span class=s2>&#34;Not found in array&#34;</span></code></pre></div>
+<p><strong>Time Complexities:</strong></p>
+<ul>
+<li><em>Best case complexity:</em> <kbd>\(O(1)\)</kbd></li>
+<li><em>Average case complexity:</em> <kbd>\(O(log(N))\)</kbd></li>
+<li><em>Worst case complexity:</em> <kbd>\(O(log(N))\)</kbd></li>
+</ul>
+<p><strong>Space Complexity:</strong> <kbd>\(O(1)\)</kbd></p>
+<hr>
+<h1 id=further-reading>Further Reading <a class=heading-anchor href=#further-reading aria-label=Anchor>#</a></h1>
+<p>If you want to learn more about Big O notations, here are a few resoruces that could be helpful:</p>
+<p><a href=http://faculty.salisbury.edu/~ealu/COSC320/Lectures/complexity.pdf>Big O Lecture Notes - Salisbury University</a> <br>
+<a href=https://www.bigocheatsheet.com>Big O cheat sheet</a> <br>
+<a href=https://nikhil0504.github.io/School-PPT/>My presentation</a></p>
+</section>
+<footer class=pt-8>
+<div class=flex>
+<img class="w-24 h-24 !mt-0 !mb-0 mr-4 rounded-full" src=/profile.jpeg>
+<div class=place-self-center>
+<div class="text-[0.6rem] leading-3 text-neutral-400 dark:text-neutral-500 uppercase">
+Author
+</div>
+<div class="font-semibold leading-6 text-neutral-800 dark:text-neutral-300">
+Nikhil Garuda
+</div>
+<div class="text-sm text-neutral-700 dark:text-neutral-400">I like space 🔭 and coding 👨‍💻!</div>
+<div class="flex flex-wrap text-neutral-400 dark:text-neutral-500">
+<a class="px-1 hover:text-primary-700 dark:hover:text-primary-400" href=mailto:nikhilgaruda@live.com.com target=_blank alt=Email rel="me noopener noreferrer"><span class="relative inline-block align-text-bottom icon"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="at" class="svg-inline--fa fa-at fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentcolor" d="M256 8C118.941 8 8 118.919 8 256c0 137.059 110.919 248 248 248 48.154.0 95.342-14.14 135.408-40.223 12.005-7.815 14.625-24.288 5.552-35.372l-10.177-12.433c-7.671-9.371-21.179-11.667-31.373-5.129C325.92 429.757 291.314 440 256 440c-101.458.0-184-82.542-184-184S154.542 72 256 72c100.139.0 184 57.619 184 160 0 38.786-21.093 79.742-58.17 83.693-17.349-.454-16.91-12.857-13.476-30.024l23.433-121.11C394.653 149.75 383.308 136 368.225 136h-44.981a13.518 13.518.0 00-13.432 11.993l-.01.092c-14.697-17.901-40.448-21.775-59.971-21.775-74.58.0-137.831 62.234-137.831 151.46.0 65.303 36.785 105.87 96 105.87 26.984.0 57.369-15.637 74.991-38.333 9.522 34.104 40.613 34.103 70.71 34.103C462.609 379.41 504 307.798 504 232 504 95.653 394.023 8 256 8zm-21.68 304.43c-22.249.0-36.07-15.623-36.07-40.771.0-44.993 30.779-72.729 58.63-72.729 22.292.0 35.601 15.241 35.601 40.77.0 45.061-33.875 72.73-58.161 72.73z"/></svg>
+</span>
+</a>
+<a class="px-1 hover:text-primary-700 dark:hover:text-primary-400" href=https://github.com/Nikhil0504 target=_blank alt=Github rel="me noopener noreferrer"><span class="relative inline-block align-text-bottom icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</article>
+</main><footer class=py-10>
+<div class="flex justify-between">
+<div>
+<p class="text-sm text-neutral-400 dark:text-neutral-500">
+&copy;
+2021
+Nikhil Garuda
+</p>
+<p class="text-xs text-neutral-300 dark:text-neutral-600">
+Powered by <a class="hover:underline hover:underline-primary-300 hover:text-primary-400" href=https://gohugo.io/ target=_blank rel="noopener noreferrer">Hugo</a> & <a class="hover:underline hover:underline-primary-300 hover:text-primary-400" href=https://git.io/hugo-congo target=_blank rel="noopener noreferrer">Congo</a>
+</p>
+</div>
+</div>
+</footer>
+</body>
+</html>
