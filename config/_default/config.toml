@@ -3,9 +3,11 @@
 # https://jpanther.github.io/congo/docs/getting-started/
 
 theme = "congo"
-# baseURL = "https://your_domain.com/"
+baseURL = "https://nikhilgaruda.me/"
 languageCode = "en"
 defaultContentLanguage = "en"
+
+googleanalytics = "G-4WR1D8WYTE"
 
 title = "Nikhil Garuda"
 # copyright = "Copy, _right?_ :thinking_face:"
@@ -33,7 +35,7 @@ links = [
   #   { instagram = "https://instagram.com/username" },
   #   { keybase = "https://keybase.io/username" },
   #   { lastfm = "https://lastfm.com/user/username" },
-  #   { linkedin = "https://linkedin.com/in/username" },
+  { linkedin = "https://www.linkedin.com/in/nikhil-garuda-7448ba21a/" },
   #   { mastodon = "https://mastodon.instance/@username" },
   #   { medium = "https://medium.com/username" },
   #   { pinterest = "https://pinterest.com/username" },
