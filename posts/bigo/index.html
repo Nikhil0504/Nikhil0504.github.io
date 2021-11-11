@@ -6,7 +6,7 @@
 <title>Big O Notation &#183; Nikhil Garuda</title>
 <meta name=title content="Big O Notation &#183; Nikhil Garuda">
 <meta name=description content="Explanation of the Big O Notation">
-<link rel=canonical href=/posts/bigo/>
+<link rel=canonical href=https://nikhilgaruda.me/posts/bigo/>
 <link type=text/css rel=stylesheet href=/css/schemes/congo.min.b48d6ba061dc77186a2524fb8aac5ac3823b2679a9299ca60325abbccc9c1764c884715f0ba24b4e2776cb3814df4af1f4c854b87207cd5d4c7a254da9b55751.css integrity="sha512-tI1roGHcdxhqJST7iqxaw4I7JnmpKZymAyWrvMycF2TIhHFfC6JLTid2yzgU30rx9MhUuHIHzV1MeiVNqbVXUQ==">
 <link type=text/css rel=stylesheet href=/css/compiled/main.min.402d3b4f742c02489d0fd69ca742521356f014e6cf7cebaa4e5ae7828b6c4847676ae80103ecb4fc1ccf8c7feea273005876aaa930ac102a50d707ea771b4ec2.css integrity="sha512-QC07T3QsAkidD9acp0JSE1bwFObPfOuqTlrngotsSEdnaugBA+y0/BzPjH/uonMAWHaqqTCsECpQ1wfqdxtOwg==">
 <script>function loadPreferredAppearance(){localStorage.preferredAppearance==="dark"||!("preferredAppearance"in localStorage)&&window.matchMedia("(prefers-color-scheme: dark)").matches?document.documentElement.classList.add("dark"):document.documentElement.classList.remove("dark")}function setPreferredAppearance(a){a=="default"?localStorage.removeItem("preferredAppearance"):localStorage.preferredAppearance=a,loadPreferredAppearance()}loadPreferredAppearance(),window.matchMedia("(prefers-color-scheme: dark)").addListener(loadPreferredAppearance)</script>
@@ -17,20 +17,23 @@
 <meta property="og:title" content="Big O Notation">
 <meta property="og:description" content="Explanation of the Big O Notation">
 <meta property="og:type" content="article">
-<meta property="og:url" content="/posts/bigo/"><meta property="article:section" content="posts">
+<meta property="og:url" content="https://nikhilgaruda.me/posts/bigo/"><meta property="article:section" content="posts">
 <meta property="article:published_time" content="2021-11-10T11:40:11+05:30">
 <meta property="article:modified_time" content="2021-11-10T11:40:11+05:30">
 <meta name=twitter:card content="summary">
 <meta name=twitter:title content="Big O Notation">
 <meta name=twitter:description content="Explanation of the Big O Notation">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","articleSection":"Posts","name":"Big O Notation","headline":"Big O Notation","description":"Explanation of the Big O Notation","inLanguage":"en","author":{"@type":"Person","name":"Nikhil Garuda"},"creator":{"@type":"Person","name":"Nikhil Garuda"},"copyrightHolder":"Nikhil Garuda","copyrightYear":"2021","dateCreated":"2021-11-10T11:40:11\u002b05:30","datePublished":"2021-11-10T11:40:11\u002b05:30","dateModified":"2021-11-10T11:40:11\u002b05:30","url":"\/posts\/bigo\/","wordCount":"820","keywords":[]}</script>
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","articleSection":"Posts","name":"Big O Notation","headline":"Big O Notation","description":"Explanation of the Big O Notation","inLanguage":"en","author":{"@type":"Person","name":"Nikhil Garuda"},"creator":{"@type":"Person","name":"Nikhil Garuda"},"copyrightHolder":"Nikhil Garuda","copyrightYear":"2021","dateCreated":"2021-11-10T11:40:11\u002b05:30","datePublished":"2021-11-10T11:40:11\u002b05:30","dateModified":"2021-11-10T11:40:11\u002b05:30","url":"https:\/\/nikhilgaruda.me\/posts\/bigo\/","wordCount":"820","keywords":[]}</script>
 <meta name=generator content="Hugo 0.89.2">
 <meta name=author content="Nikhil Garuda">
 <link href=mailto:nikhilgaruda@live.com.com rel=me>
 <link href=https://github.com/Nikhil0504 rel=me>
+<link href=https://www.linkedin.com/in/nikhil-garuda-7448ba21a/ rel=me>
 <link type=text/css rel=stylesheet href=/lib/katex/katex.min.bc9ab1919f92ba07ffe96465a5cc4dd35a957d7ff6f6117aa9cdf7787175bdadcd82857e53ec028beb9302c435d2c0e81b20711cb75a1ef1b00e5577c9561ba0.css integrity="sha512-vJqxkZ+Sugf/6WRlpcxN01qVfX/29hF6qc33eHF1va3NgoV+U+wCi+uTAsQ10sDoGyBxHLdaHvGwDlV3yVYboA==">
 <script defer src=/lib/katex/katex.min.e6e7cd707a8e6208a51841cf7ee44843907fbc34b533cf940be0c4499e42c158064e0f9bd8e97fd79ad82ff1a209627f4b1f28568d053c5a24d5d3e4f14f4835.js integrity="sha512-5ufNcHqOYgilGEHPfuRIQ5B/vDS1M8+UC+DESZ5CwVgGTg+b2Ol/15rYL/GiCWJ/Sx8oVo0FPFok1dPk8U9INQ=="></script>
 <script defer src=/lib/katex/auto-render.min.640fd13eb028f3c0e5c119e7a0d56a28836740d716111cd12b4dcf0da038188262559bc61485906dd582b1479b3197e45a88677e782c0e35f353a3e890ee231b.js integrity="sha512-ZA/RPrAo88DlwRnnoNVqKINnQNcWERzRK03PDaA4GIJiVZvGFIWQbdWCsUebMZfkWohnfngsDjXzU6PokO4jGw==" onload=renderMathInElement(document.body)></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4WR1D8WYTE"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-4WR1D8WYTE',{anonymize_ip:!1})}</script>
 </head>
 <body class="flex flex-col h-screen px-6 m-auto text-lg leading-7 bg-neutral text-neutral-900 sm:px-14 md:px-24 lg:px-32 dark:bg-neutral-800 dark:text-neutral max-w-7xl"><header class="flex justify-between py-6 font-semibold sm:items-center sm:py-10 text-neutral-800 dark:text-neutral">
 <div>
@@ -200,6 +203,10 @@ Nikhil Garuda
 </a>
 <a class="px-1 hover:text-primary-700 dark:hover:text-primary-400" href=https://github.com/Nikhil0504 target=_blank alt=Github rel="me noopener noreferrer">
 <span class="relative inline-block align-text-bottom icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentcolor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6.0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6.0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3.0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1.0-6.2-.3-40.4-.3-61.4.0.0-70 15-84.7-29.8.0.0-11.4-29.1-27.8-36.6.0.0-22.9-15.7 1.6-15.4.0.0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5.0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9.0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4.0 33.7-.3 75.4-.3 83.6.0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6.0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9.0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+</span>
+</a>
+<a class="px-1 hover:text-primary-700 dark:hover:text-primary-400" href=https://www.linkedin.com/in/nikhil-garuda-7448ba21a/ target=_blank alt=Linkedin rel="me noopener noreferrer">
+<span class="relative inline-block align-text-bottom icon"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin" class="svg-inline--fa fa-linkedin fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentcolor" d="M416 32H31.9C14.3 32 0 46.5.0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6.0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3.0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2.0 38.5 17.3 38.5 38.5.0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6.0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2.0 79.7 44.3 79.7 101.9V416z"/></svg>
 </span>
 </a>
 </div>
